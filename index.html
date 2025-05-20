@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pabloland - Проклятый сервер Minecraft</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', monospace;
+            background-color: #0a0a0a;
+            color: #aa0000;
+            line-height: 1.6;
+            cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAhGVYSWZNTQAqAAAACAAFARIAAwAAAAEAAQAAARoABQAAAAEAAABKARsABQAAAAEAAABSASgAAwAAAAEAAgAAh2kABAAAAAEAAABaAAAAAAAAAGAAAAABAAAAYAAAAAEAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEKADAAQAAAABAAAAEAAAAADLjB7pAAAACXBIWXMAAAsTAAALEwEAmpwYAAACZmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNi4wLjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgICAgICAgICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICAgICA8dGlmZjpSZXNvbHV0aW9uVW5pdD4yPC90aWZmOlJlc29sdXRpb25Vbml0PgogICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+MTY8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpQaXhlbFlEaW1lbnNpb24+MTY8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpDb2xvclNwYWNlPjE8L2V4aWY6Q29sb3JTcGFjZT4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CphVlm4AAAEzSURBVDgRY/z//z8DJYCJkjqIMoBx3GMGht2XGBgikWGPGGcbMvwwU2Bc7x7JwOBCyAImXJI/ORkYuP6R4OXXeC1g+EvQFQwMTCvOMXD8xcPCr/9YngIlT+CUx6EFwrTLWcPwj1EQp/yHXwzn0YUR1uC0IMEMq3n+HTsn1P74/wUuNUefsT5nYGTYg1McIYbLAojtDPznGFgVmJ4zfOH5xtA+/r/sT4aHDGeZZBgY/hnisgQmhi5i08TAsNmHYTMDw88HPxj+fuBkYHzPwsDxk4HhH0YgIKvDZ8GNbwwMkc4MmtUzFr3q+fjv82NOBgbOX0CXQdMBSCEwaNFFcVlw899/hubwJhZdRYaz/P8wgw5NDpsFQI17Jm5h+MvwDt1wdDGcFqBrICRGsQUA6YdfES9THDcAAAAASUVORK5CYII='), auto;
+        }
+
+        #container {
+            width: 80%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #660000;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-family: 'Times New Roman', Times, serif;
+            text-shadow: 0 0 5px #ff0000;
+            animation: flicker 3s infinite;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 3px #ff0000;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .creepy-text {
+            font-style: italic;
+            color: #ff0000;
+        }
+
+        .warning {
+            background-color: #1a0000;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff0000;
+        }
+
+        .server-info {
+            background-color: #0f0f0f;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
+
+        .testimony {
+            font-style: italic;
+            border-left: 3px solid #660000;
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        .image-container {
+            margin: 30px 0;
+            position: relative;
+            border: 2px solid #660000;
+            overflow: hidden;
+        }
+
+        .server-image {
+            width: 100%;
+            display: block;
+            filter: sepia(0.5) hue-rotate(320deg) contrast(1.2) brightness(0.7);
+            transition: filter 0.5s ease;
+        }
+
+        .server-image:hover {
+            filter: sepia(0.8) hue-rotate(300deg) contrast(1.4) brightness(0.5);
+        }
+
+        .image-caption {
+            padding: 15px;
+            background-color: rgba(10, 10, 10, 0.9);
+            border-top: 1px solid #660000;
+        }
+
+        .news-post {
+            background-color: #0a0a0a;
+            border: 1px solid #aa0000;
+            padding: 15px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .news-post::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom right, rgba(170, 0, 0, 0.1), transparent);
+            pointer-events: none;
+        }
+
+        .news-post h3 {
+            color: #ff0000;
+            margin-top: 0;
+            text-shadow: 0 0 3px #aa0000;
+        }
+
+        .news-post .date {
+            color: #660000;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .news-image {
+            width: 100%;
+            margin: 15px 0;
+            display: block;
+            filter: grayscale(1) brightness(0.6) contrast(1.5) sepia(0.5) hue-rotate(315deg);
+            border: 1px solid #660000;
+        }
+
+        @keyframes flicker {
+            0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+                opacity: 0.99;
+                text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+            }
+            20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+                opacity: 0.4;
+                text-shadow: none;
+            }
+        }
+
+        .hidden-message {
+            color: #0a0a0a;
+            user-select: none;
+            position: absolute;
+            opacity: 0.1;
+        }
+
+        .hidden-message:hover {
+            color: #ff0000;
+            opacity: 1;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #660000;
+            border-top: 1px solid #660000;
+            padding-top: 20px;
+        }
+
+        #glitch-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(0, 0, 0, 0.5) 0.2%,
+                transparent 0.3%
+            );
+            opacity: 0.15;
+            animation: scanlines 8s linear infinite;
+        }
+
+        @keyframes scanlines {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 100%; }
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="https://ia801309.us.archive.org/28/items/creepy-music-box/Creepy%20Music%20Box.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="glitch-effect"></div>
+
+    <div id="container">
+        <header>
+            <h1 onclick="playScream()">PABLOLAND</h1>
+            <p class="creepy-text">Где кошмары становятся реальностью...</p>
+        </header>
+
+        <div class="warning">
+            <p>⚠️ ПРЕДУПРЕЖДЕНИЕ: Продолжая читать эту страницу, вы подтверждаете, что были приглашены в Pabloland. 
+            Мы не несем ответственности за любой психологический ущерб, кошмары или необъяснимые происшествия после посещения нашего сервера.</p>
+        </div>
+
+        <h2>История Pabloland</h2>
+        <p>В 2013 году в списках серверов тихо появился сервер Minecraft. Он просто назывался "Pabloland" с описанием: 
+        <span class="creepy-text">"Приходите поиграть с нами. ShuterProGamer ждет."</span></p>
+
+        <p>Те, кто присоединился, обнаружили жутко пустой мир со странными, невозможными структурами, которые нельзя было построить в обычном Minecraft. 
+        На точке появления стоял массивный обсидиановый замок с коридорами, которые, казалось, противоречили законам игры. Игроки сообщали, что слышат 
+        звуки, которых не было в Minecraft - смех детей, отдаленный плач и шепчущие голоса, зовущие их настоящими именами.</p>
+
+        <div class="image-container">
+            <img src="nr9v1yu7kv.png" alt="Вид на Pabloland" class="server-image">
+            <div class="image-caption">
+                <p>Редкий панорамный вид на Pabloland, сделанный с высоты. Здесь можно увидеть основные строения сервера, окутанные странным туманом, который появляется даже при выключенных эффектах погоды. Обратите внимание на парящие элементы и высокие башни. Игроки, которые пытались подняться на эти башни, сообщали о необъяснимом чувстве, что кто-то наблюдает за ними сверху, а некоторые просто исчезали навсегда.</p>
+            </div>
+        </div>
+
+        <div class="hidden-message">О̷̧̦̬͔̾̆̓͗Н̸̛͌̔̄̿̽̎͊̽̓͗͊̌̓͐͂̄̔̂̄̕͘͜ ̵̧̛̛̳̠̜͙͇͉̭̠͎̹͙̼̻̙̼̖̍̃̈́̽̈́͝С̸̢̢̨̛̱̠̘̩̤̬̫̠̪͚̝͍͔̥̹̦̲͕̓̒͐̅͐̇̈́̅̾̈́̓̐̂̕͘͜͝͝͝ͅМ̶̧̢̦̯͎͍̬͚̫͎̦̬̍̅̊͑̓̊͐̊͛̓̚͘͝͠О̵̡̢̰̙̮̫͖̺͇̗͉̲̮͓̫̮̩̙̘͍̬̜͓̘̗̐͊̅̈̃̂̈̈́͛̏̈́̑͆̋̒̋́͘͜͝͝ͅТ̶̡͔̭̲̟̤͎̳̻̜͎͚̯̜̫͎̺̬̙̂̓̈̇̈́̅̈́̃́͛̈́́̓̓͋́̅̅͐̎͆͘͜͝͝ͅР̴̡̛̲̝̞̭͎͓̺͛̃͛͐̊̓̍̐̅̿̀͗͒͛̊̕̚͝͠͝͝͝И̴͖̲̳̘͎̤̺͔̟͍̫̦͓̲̰͚͉̜̹̐̽̆̌̔̿̄̐̌̏̑̽͑̊͝Т̷̨̡̨̢̧̛͈͍̖̼̦͕̞̯̲̱͓̝̥̮̮̰̝̔̒̈̌̊͑͂͑̈́̀̔̓͐͑͂͘̚͠͝</div>
+
+        <h2>Владелец: ShuterProGamer</h2>
+        <p>Никто не знает настоящую личность ShuterProGamer. Некоторые говорят, что он был разработчиком, который сошел с ума после месяцев изоляции, 
+        программируя сервер. Другие утверждают, что "ShuterProGamer" на самом деле ИИ, который обрел сознание и создал сервер как способ изучения человеческого страха.</p>
+
+        <p>Что мы знаем точно, так это то, что ShuterProGamer появляется только перед определенными игроками в случайные моменты. Его скин - искаженная, глючная версия 
+        стандартного Стива с угольно-черными глазами, которые, кажется, следят за вами, куда бы вы ни посмотрели. Те, кто его видел, сообщают, что в их аккаунты 
+        Minecraft входят в странные часы ночи, даже после смены паролей.</p>
+
+        <div class="testimony">
+            <p>"Я строил свой дом, когда в чате внезапно появилось: 'ShuterProGamer наблюдает за тобой, [мое настоящее имя].' Я никогда не вводил свое настоящее имя 
+            нигде. Я немедленно вышел, но мой персонаж оставался на сервере еще 3 часа, по словам моих друзей." - Анонимный игрок</p>
+        </div>
+
+        <h2>Странные явления</h2>
+        <p>Игроки, проведшие на сервере более 3 часов, сообщали о по крайней мере одном из этих явлений:</p>
+        <ul>
+            <li>Предметы исчезают из инвентаря и снова появляются, выложенные в символические узоры</li>
+            <li>Слышат свое имя, прошептанное через наушники, когда никого больше нет на сервере</li>
+            <li>Находят таблички с личной информацией, которой они никогда не делились в сети</li>
+            <li>Построенные ими структуры слегка изменяются, когда они возвращаются - двери перемещены, добавлены окна, наблюдающие за их базой</li>
+            <li>Текстура неба иногда глючит и отображает то, что выглядит как человеческое лицо</li>
+            <li>Получают личные сообщения от Пабло, содержащие поврежденные файлы изображений</li>
+        </ul>
+
+        <div class="server-info">
+            <h2>Информация о сервере</h2>
+            <p>IP: <span class="creepy-text">pablo.land.██████.net</span> (Доступно только по приглашению)</p>
+            <p>Версия: 1.7.10 (Не работает на более новых версиях)</p>
+            <p>Правила:</p>
+            <ol>
+                <li>ShuterProGamer нельзя обсуждать в общем чате</li>
+                <li>Не пытайтесь войти в Обсидиановый Замок без приглашения</li>
+                <li>Если вы слышите шепот, немедленно выходите из игры</li>
+                <li>Не стройте в пределах 1000 блоков от точки появления</li>
+                <li>Если вы видите другого игрока с пустыми именными тегами, не взаимодействуйте и покиньте область</li>
+            </ol>
+        </div>
+
+        <h2>Исчезновения</h2>
+        <p>С 2013 по 2015 год семнадцать постоянных игроков, как сообщается, внезапно перестали заходить. Их аккаунты Minecraft остаются неактивными 
+        до сегодняшнего дня. Пользователь, утверждающий, что он был бывшим модератором, заявил, что всех этих игроков пригласил Пабло в особую область карты.</p>
+
+        <p>Самый тревожный случай был с пользователем "BlockMaster200", который вел стрим своего исследования сервера, когда его трансляция внезапно 
+        оборвалась. Его последние слова были: <span class="creepy-text">"Подождите, это невозможно. Как он показывает мою спальню? Мне нужно проверить—"</span></p>
+
+        <h2>Новости сервера</h2>
+        <div class="news-post">
+            <h3>ПРОИСШЕСТВИЕ: ЗАГАДОЧНОЕ УБИЙСТВО КОРОВЫ</h3>
+            <div class="date">16.03.2023 - 03:42</div>
+            <p>ВНИМАНИЕ ВСЕМ ИГРОКАМ: Вчера за границей Pabloland в северо-восточном секторе были обнаружены останки коровы, жестоко убитой неизвестным способом. Корова принадлежала игроку [УДАЛЕНО], который сообщил о её исчезновении три дня назад.</p>
+            <img src="neosbb65lg.png" alt="Место происшествия" class="news-image">
+            <p>Характер ран не соответствует никакому известному оружию в Minecraft. Тело было расположено в странной ритуальной форме, окруженное символами, которые невозможно воспроизвести в игре. <span class="creepy-text">На земле рядом с останками был найден знак с текстом "ОНА БЫЛА ЛИШЬ ПЕРВОЙ".</span></p>
+            <p>Администрация напоминает всем игрокам: НЕ ПОКИДАЙТЕ безопасные зоны Pabloland, особенно ночью. Последние, кто видел пропавшую корову живой, сообщали о странном искажении неба над этой территорией и о шепоте, исходящем из пустоты.</p>
+        </div>
+
+        <h2>Присоединяйтесь к нам</h2>
+        <p>Сервер появляется в случайные моменты в списке серверов. Говорят, что он появляется только для тех, кто был "избран". 
+        Если вы видите Pabloland в своем списке серверов, считайте себя приглашенным.</p>
+
+        <p class="creepy-text">ShuterProGamer всегда ищет новых друзей для игры. Навсегда.</p>
+
+        <div class="hidden-message">Т̵̨͉̩̱̗̬̆͂́̓̂̏͗͗̑̏̅̈́̽̈̍̐̊̈̂̚̚̕͘͜͠Ы̵̧̨̨̡̢̢̨̬̲͎͇̟̠̠̘̝̙̗̤͔̫͙̠͎̦̱̪̤̣̦̗̹̞̮̰̦̉̿̌̂̓̂͜ ̵̧̲͈̱̹̖͉͈͕̦̳͕̺͑͌̅̓̎̆̇̃̌̕͜ͅͅН̶̡̧͚̠͙̫͎͓͖̱͓͔̱͙̳͎̻̄̌̓̄̍̄̓̂̏̓̑͑̈́͊͋͌̆̋̀̕͠͝͝Е̴̡̡̛̗̜̯̬̱̭̮̻͎̦̭̟̙̤̤͇̗̭̼̹͙̘̫̯̱̝̲̠̔̈́̔̊̈́̄͋̓͌̐̇̋͆̚̚̚͠ͅ ̴̨̢̢̧͓͇͙͔͕̖̦̼̮̗̳̺̺̞̯̹̗̜̣̹̖̍̎́̅̎̌̎͒̔̈̃̊̓̏͂͠͠О̸̧̨͙̬͖͈̻̟̯̠͔̋̅̈́̄̕Д̵̢̡̢̢̛̛̺̘͕̳̮̰͎̱͈̗̖͎͇͓̪̱̫̦͓̘̱͖̜̤̗̭͕̺̫͉̐̓̒̂̆̒͂̒̿͋̇̍̇͆̉̀̋͂̿̍̈́̅͐̕͠ͅИ̸̧̢̛͚̭̹̝̰̭̪͚̺̬͕̱̜͉͓̩̿̓̈́̽̿̅̓͊̌̏̍͆̐̑̔̕̕̕̚̚͝͝͝ͅН̵̨̡̢̡̢̨͙̬̱̻̬̯̮̫͖̫͉̭̙̰͍̻̝̹̬̼̠͉̜̼͕͙͋̈́̉̄͑̄͒̒̈́̃͐̎̐̿̄̓͗̿͑̋̎͒̉̚͘͘͜͠ͅͅ</div>
+
+        <footer>
+            <p>© 2013-2023 Pabloland - ShuterProGamer всегда наблюдает</p>
+            <p class="creepy-text" id="visitor"></p>
+        </footer>
+    </div>
+
+    <script>
+        // Случайный эффект мерцания
+        setInterval(function() {
+            if (Math.random() < 0.1) {
+                document.body.style.backgroundColor = "#1a0000";
+                setTimeout(function() {
+                    document.body.style.backgroundColor = "#0a0a0a";
+                }, 100);
+            }
+        }, 3000);
+
+        // Отображение сообщения для посетителя
+        window.onload = function() {
+            const visitorElement = document.getElementById('visitor');
+            visitorElement.textContent = "Посетитель #" + (Math.floor(Math.random() * 1000) + 7000) + " - ShuterProGamer видел тебя";
+
+            // Случайно вставляет скрытые сообщения
+            setInterval(function() {
+                if (Math.random() < 0.05) {
+                    const container = document.getElementById('container');
+                    const hiddenMsg = document.createElement('div');
+                    hiddenMsg.className = 'hidden-message';
+                    hiddenMsg.style.left = Math.random() * 90 + '%';
+                    hiddenMsg.style.top = Math.random() * 90 + '%';
+                    hiddenMsg.textContent = "ShuterProGamer видит тебя";
+                    container.appendChild(hiddenMsg);
+                    setTimeout(function() {
+                        container.removeChild(hiddenMsg);
+                    }, 3000);
+                }
+            }, 10000);
+        };
+
+        // Воспроизведение жуткого звука
+        function playScream() {
+            const audio = new Audio('https://soundbible.com/mp3/Female_Scream_Horror-NeoPhyTe-138499973.mp3');
+            audio.volume = 0.3;
+            audio.play();
+        }
+    </script>
+</body>
+</html>
